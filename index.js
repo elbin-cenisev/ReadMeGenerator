@@ -3,6 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
+function generateReadme() {
 inquirer
     .prompt([
         {
@@ -56,7 +57,7 @@ inquirer
         const licenseBadge = getBadge(response.licenseBadge);
         const githubLink = `https://github.com/${response.githubQst}`
 
-        const README = `
+        const ReadmeText = `
         # ${response.titleQst}
         ${licenseBadge}
         
@@ -91,13 +92,21 @@ inquirer
         You can find my Github profile at ${githubLink}.
         You can reach me via email at ${response.emailQst}
         `
+        writeToFile(README, ReadmeText);
     });
+}
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(fileName, data) { 
+    fs.writeFile(`${fileName}.md`, data, (error) =>
+        error ? console.error(error) : console.log("Successfully created README file")
+    );
+}
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() { 
+
+}
 
 // Function call to initialize app
 init();
