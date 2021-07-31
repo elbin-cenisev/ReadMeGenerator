@@ -41,14 +41,34 @@ inquirer
             name: 'licenseQst',
             choices: ["MIT", "GNU", "BSD3"],
         },
+        {
+            type: 'input',
+            message: 'Enter your Github username: ',
+            name: 'githubQst',
+        },
+        {
+            type: 'input',
+            message: 'Enter your email address: ',
+            name: 'emailQst',
+        },
     ])
     .then((response) => {
-
         const licenseBadge = getBadge(response.licenseBadge);
+        const githubLink = `https://github.com/${response.githubQst}`
 
         const README = `
         # ${response.titleQst}
+        ${licenseBadge}
         
+        ## Table of Contents
+        1. [Description](#Description)
+        2. [Installation](#Installation)
+        3. [Usage](#Usage)
+        4. [Contributing](#Contributing)
+        5. [Tests](#Tests)
+        6. [License](#License)
+        7. [Questions](#Questions)
+
         ## Description
         ${response.descriptionQst}.
         
@@ -67,14 +87,9 @@ inquirer
         ## License
         This repository is covered under the ${response.licenseQst} license.
         
-        ## Screenshots
-        ![Screenshot from 2021-06-24 13-56-46](https://user-images.githubusercontent.com/75343776/123310396-0a02da80-d4f4-11eb-9645-417c90412f55.png)
-        ![Screenshot from 2021-06-24 13-40-59](https://user-images.githubusercontent.com/75343776/123310421-0ec78e80-d4f4-11eb-8cd0-3f1c5dfe4f07.png)
-        ![Screenshot from 2021-06-24 13-40-20](https://user-images.githubusercontent.com/75343776/123310434-1129e880-d4f4-11eb-8755-ff91ffcb9821.png)
-        ![Screenshot from 2021-06-24 13-39-02](https://user-images.githubusercontent.com/75343776/123310446-138c4280-d4f4-11eb-9756-e969f17fdf64.png)
-        
-        ## License
-        MIT License
+        ## Questions
+        You can find my Github profile at ${githubLink}.
+        You can reach me via email at ${response.emailQst}
         `
     });
 
