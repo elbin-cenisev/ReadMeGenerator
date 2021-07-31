@@ -3,7 +3,45 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'Title of your README',
+            name: 'titleQst',
+        },
+        {
+            type: 'input',
+            message: 'Enter a description: ',
+            name: 'descriptionQst',
+        },
+        {
+            type: 'input',
+            message: 'Enter installation instructions: ',
+            name: 'installQst',
+        },
+        {
+            type: 'input',
+            message: 'Enter usage information: ',
+            name: 'usageQst',
+        },
+        {
+            type: 'input',
+            message: 'Enter contribution guidelines: ',
+            name: 'contributionQst',
+        },
+        {
+            type: 'input',
+            message: 'Enter test instructions: ',
+            name: 'testQst',
+        },
+        {
+            type: 'input',
+            message: 'Pick a license (MIT, GNU, BSD3): ',
+            name: 'licenseQst',
+            choices: ["MIT", "GNU", "BSD3"],
+        },
+    ])
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
