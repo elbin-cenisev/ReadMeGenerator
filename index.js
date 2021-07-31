@@ -42,6 +42,16 @@ inquirer
             choices: ["MIT", "GNU", "BSD3"],
         },
     ])
+    .then((response) => {
+        const questions = [
+            response.titleQst, 
+            response.descriptionQst, 
+            response.installQst, 
+            response.usageQst,
+            response.contributionQst,
+            response.testQst,
+            response.licenseQst
+        ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
