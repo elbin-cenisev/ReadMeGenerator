@@ -94,10 +94,12 @@ ${response.testQst}.
 This repository is covered under the ${response.licenseQst} license.
 
 ## Questions
-You can find my Github profile at ${githubLink}.
-You can reach me via email at ${response.emailQst}
+You can find my Github profile at ${githubLink}.  
+You can reach me via email at ${response.emailQst}.  
 `
-            writeToFile("README.md", ReadmeText);
+
+            // Write README text to file
+            writeToFile("userREADME.md", ReadmeText);
         });
 }
 
