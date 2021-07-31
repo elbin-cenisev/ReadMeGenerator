@@ -8,7 +8,7 @@ inquirer
     .prompt([
         {
             type: 'input',
-            message: 'Title of your README',
+            message: 'Title of your README: ',
             name: 'titleQst',
         },
         {
@@ -108,13 +108,13 @@ inquirer
         You can find my Github profile at ${githubLink}.
         You can reach me via email at ${response.emailQst}
         `
-        writeToFile(README, ReadmeText);
+        writeToFile("README.md", ReadmeText);
     });
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { 
-    fs.writeFile(`${fileName}.md`, data, (error) =>
+    fs.writeFile(fileName, data, (error) =>
         error ? console.error(error) : console.log("Successfully created README file")
     );
 }
