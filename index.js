@@ -54,9 +54,25 @@ inquirer
         },
     ])
     .then((response) => {
-        const licenseBadge = getBadge(response.licenseBadge);
+
+        // Generate correct license badge
+        const licenseBadge = (license) => {
+            if (license === "mit") {
+                licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+            }
+            if (license === "bsd3") {
+                licenseBadge = "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+            }
+            if (license === "gnu") {
+                licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+            }
+            return licenseBadge;
+        } 
+
+        // Generate github link
         const githubLink = `https://github.com/${response.githubQst}`
 
+        // Generate README text based on user info
         const ReadmeText = `
         # ${response.titleQst}
         ${licenseBadge}
@@ -110,19 +126,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-// Function that returns correct license badge
-function getBadge(license) {
-    let licenseBadge;
-    license = license.toLowerCase();
-    if (license === "mit") {
-        licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-    }
-    if (license === "bsd3") {
-        licenseBadge = "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
-    }
-    if (license === "gnu") {
-        licenseBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-    }
-    return licenseBadge;
-}
