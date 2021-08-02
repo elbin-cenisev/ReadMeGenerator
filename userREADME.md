@@ -1,6 +1,6 @@
 
-# Test
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Title
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Table of Contents
 1. [Description](#-Description)
@@ -12,23 +12,23 @@
 7. [Questions](#-Questions)
 
 ## Description
-Hello this is a description.
-
+Description.
+            
 ## Installation
-Install like this.
+Installation.
 
 ## Usage
-Use like this.
+Usage.
 
 ## Contributing
-This is how you contribute.
+Contribution.
 
 ## Tests
-Test test test.
+Test.
 
 ## License
-This repository is covered under the MIT license.
+This repository is covered under the BSD3 license.
 
 ## Questions
-You can find my Github profile at https://github.com/test.  
-You can reach me via email at test@gmail.com.  
+You can find my Github profile at https://github.com/testguy.  
+You can reach me via email at testguy@testmail.com.  
